@@ -82,6 +82,10 @@ hl("htmlString",  { fg = c.orange })
 -- --- 4. TREE-SITTER ---
 hl("@tag",               { fg = c.teal })
 hl("@tag.delimiter",     { fg = c.fg_muted })
+-- Força cor muted nos delimitadores HTML/XML, sobrescrevendo rainbow-delimiters
+hl("@tag.delimiter.html",      { fg = c.fg_muted })
+hl("@tag.delimiter.xml",       { fg = c.fg_muted })
+hl("@punctuation.bracket.html",{ fg = c.fg_muted })
 hl("@tag.attribute",     { fg = c.purple, italic = true })
 hl("@keyword",           { fg = c.orange, italic = true, bold = true })
 hl("@keyword.control",   { fg = c.orange, bold = true, italic = true })

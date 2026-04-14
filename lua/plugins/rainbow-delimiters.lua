@@ -13,6 +13,9 @@ return {
         [""] = rainbow.strategy["global"],
         -- Para arquivos muito grandes, usar estratégia local (mais performático)
         commonlisp = rainbow.strategy["local"],
+        -- Desabilita rainbow em HTML/XML (tags < > não devem ser coloridas)
+        html = vim.NIL,
+        xml  = vim.NIL,
       },
       query = {
         [""] = "rainbow-delimiters",
