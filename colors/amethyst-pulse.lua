@@ -82,14 +82,36 @@ hl("htmlString",  { fg = c.orange })
 -- --- 4. TREE-SITTER ---
 hl("@tag",               { fg = c.teal })
 hl("@tag.delimiter",     { fg = c.fg_muted })
--- Força cor muted nos delimitadores HTML/XML, sobrescrevendo rainbow-delimiters
-hl("@tag.delimiter.html",      { fg = c.fg_muted })
-hl("@tag.delimiter.xml",       { fg = c.fg_muted })
-hl("@punctuation.bracket.html",{ fg = c.fg_muted })
+-- Força cor muted nos delimitadores HTML/XML/TSX, sobrescrevendo rainbow-delimiters
+hl("@tag.delimiter.html",        { fg = c.fg_muted })
+hl("@tag.delimiter.xml",         { fg = c.fg_muted })
+hl("@tag.delimiter.tsx",         { fg = c.fg_muted })
+hl("@punctuation.bracket.html",  { fg = c.fg_muted })
+hl("@punctuation.bracket.tsx",   { fg = c.fg_muted })
+-- Tags TSX (componentes React e elementos HTML dentro de TSX)
+hl("@tag.tsx",                   { fg = c.teal })
+hl("@tag.builtin.tsx",           { fg = c.teal })
+hl("@tag.attribute.tsx",         { fg = c.purple, italic = true })
 hl("@tag.attribute",     { fg = c.purple, italic = true })
-hl("@keyword",           { fg = c.orange, italic = true, bold = true })
-hl("@keyword.control",   { fg = c.orange, bold = true, italic = true })
-hl("@keyword.function",  { fg = c.purple, bold = true })
+
+-- Keywords por categoria
+hl("@keyword",                    { fg = c.purple, bold = true })          -- const, let, var, break, static...
+hl("@keyword.import",             { fg = c.blue,   bold = true })          -- import, export, from, as
+hl("@keyword.conditional",        { fg = c.orange, bold = true, italic = true }) -- if, else, switch, case
+hl("@keyword.conditional.ternary",{ fg = c.orange, bold = true })          -- ? :
+hl("@keyword.repeat",             { fg = c.orange, bold = true, italic = true }) -- for, while, do, of
+hl("@keyword.return",             { fg = c.red,    bold = true })          -- return, yield
+hl("@keyword.function",           { fg = c.purple, bold = true })          -- function
+hl("@keyword.coroutine",          { fg = c.purple, bold = true, italic = true }) -- async, await
+hl("@keyword.operator",           { fg = c.purple, bold = true })          -- new, typeof, instanceof, delete
+hl("@keyword.exception",          { fg = c.red,    bold = true })          -- throw, try, catch, finally
+hl("@keyword.type",               { fg = c.cyan,   bold = true })          -- class
+-- Manter compatibilidade com versões antigas do treesitter
+hl("@keyword.control",            { fg = c.orange, bold = true, italic = true })
+
+-- Operadores
+hl("@operator",                   { fg = c.red,    bold = true })          -- &&, ||, &, |, =, ==, +, -...
+
 hl("@function",          { fg = c.blue, italic = true })
 hl("@variable",          { fg = c.fg })
 hl("@variable.builtin",  { fg = c.purple })
@@ -132,3 +154,9 @@ vim.cmd("highlight! link @markup.heading.1.markdown markdownH1")
 vim.cmd("highlight! link @markup.heading.2.markdown markdownH2")
 vim.cmd("highlight! link @markup.italic             markdownItalic")
 vim.cmd("highlight! link @markup.strong             markdownBold")
+
+-- Links para TSX (garante herança correta quando sufixo específico não é definido)
+vim.cmd("highlight! link @tag.tsx             @tag")
+vim.cmd("highlight! link @tag.builtin.tsx     @tag")
+vim.cmd("highlight! link @tag.attribute.tsx   @tag.attribute")
+vim.cmd("highlight! link @tag.delimiter.tsx   @tag.delimiter")

@@ -4,18 +4,21 @@
 return {
   "HiPhish/rainbow-delimiters.nvim",
   event = { "BufReadPost", "BufNewFile" },
-  config = function()
-    local rainbow = require("rainbow-delimiters")
-
+  -- init roda antes do plugin ser carregado, garantindo que vim.g.rainbow_delimiters
+  -- esteja definido no momento em que o plugin inicializa
+  init = function()
     vim.g.rainbow_delimiters = {
       strategy = {
         -- Estratégia global: por contexto (Tree-sitter)
-        [""] = rainbow.strategy["global"],
+        [""]         = "rainbow-delimiters.strategy.global",
         -- Para arquivos muito grandes, usar estratégia local (mais performático)
-        commonlisp = rainbow.strategy["local"],
-        -- Desabilita rainbow em HTML/XML (tags < > não devem ser coloridas)
-        html = vim.NIL,
-        xml  = vim.NIL,
+        commonlisp   = "rainbow-delimiters.strategy.local",
+        -- Desabilita rainbow em HTML/XML e JSX/TSX (tags < > não devem ser coloridas)
+        -- Os nomes aqui são linguagens do Tree-sitter, não filetypes do Vim
+        html         = "rainbow-delimiters.strategy.no-op",
+        xml          = "rainbow-delimiters.strategy.no-op",
+        jsx          = "rainbow-delimiters.strategy.no-op",
+        tsx          = "rainbow-delimiters.strategy.no-op",
       },
       query = {
         [""] = "rainbow-delimiters",
