@@ -1,4 +1,4 @@
-# Pulse.vim
+# Amthy.vim
 
 A personal Neovim configuration built on top of [LazyVim](https://github.com/LazyVim/LazyVim), focused on web and TypeScript/Angular development with a custom dark purple visual identity.
 
@@ -144,7 +144,7 @@ mv ~/.cache/nvim ~/.cache/nvim.bak
 ### 4. Clone this configuration
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/pulse.vim.git ~/.config/nvim
+git clone https://github.com/YOUR_USERNAME/amthy-vim.vim.git ~/.config/nvim
 ```
 
 > Replace `YOUR_USERNAME` with your GitHub username.
