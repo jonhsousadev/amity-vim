@@ -144,7 +144,7 @@ mv ~/.cache/nvim ~/.cache/nvim.bak
 ### 4. Clone this configuration
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/amthy-vim.vim.git ~/.config/nvim
+git clone https://github.com/YOUR-USERNAME/amthy-vim.git
 ```
 
 > Replace `YOUR_USERNAME` with your GitHub username.
