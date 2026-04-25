@@ -1,11 +1,43 @@
+# Arquivos temporários e de cache do editor
 tt.*
 .tests
 doc/tags
 debug
 .repro
+/.repro
 foo.*
 *.log
 data
 .DS_Store
-/.repro
 /node_modules
+
+# Cache do LSP (mason, servidores de linguagem instalados localmente)
+/mason/
+
+# Cache de plugins (lazy.nvim baixa para ~/.local/share/nvim, mas por segurança)
+# Se você tem um diretório local de dados dentro do config:
+/cache/
+
+# Histórico de comandos do Neovim
+# (normalmente fica em ~/.local/state/nvim, mas caso esteja aqui)
+*.shada
+*.shada.tmp.*
+shada/
+
+# Arquivos de sessão
+/session/
+*.session
+
+# Logs do LSP e do Neovim
+lsp.log
+*.log.*
+
+# Arquivos de ambiente e segredos (nunca subir!)
+.env
+.env.*
+*.secret
+secrets.*
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
