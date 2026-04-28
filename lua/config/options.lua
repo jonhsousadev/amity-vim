@@ -6,3 +6,4 @@ vim.opt.number = true -- Mantém os números absolutos atios
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.guifont = "JetBrainsMono Nerd Font Mono:h12"
+vim.opt.mouse = "a"
