@@ -1,4 +1,4 @@
-# Amthy.vim
+# Amity.vim
 
 A personal Neovim configuration built on top of [LazyVim](https://github.com/LazyVim/LazyVim), focused on web and TypeScript/Angular development with a custom dark purple visual identity.
 
