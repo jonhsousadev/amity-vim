@@ -147,7 +147,7 @@ mv ~/.cache/nvim ~/.cache/nvim.bak
 git clone https://github.com/jonhsousadev/amity-vim.git
 ```
 
-> Replace `YOUR_USERNAME` with your GitHub username.
+> This command clones the main repository. If you fork this project and want to clone your fork instead, replace `jonhsousadev` with your GitHub username.
 
 ---
 
