@@ -1,6 +1,6 @@
 # Amity.vim
-
-A personal Neovim configuration built on top of [LazyVim](https://github.com/LazyVim/LazyVim), focused on web and TypeScript/Angular development with a custom dark purple visual identity.
+Amity Vim merges the vibrant aesthetics of amethyst with the concept of Amity (Friendship and Harmony). It represents the perfect collaboration between the developer and their tools, creating a peaceful, fluid, and highly efficient coding environment through the synergy of keyboard and mind.
+It was built on top of [LazyVim](https://github.com/LazyVim/LazyVim), focused on web and TypeScript/Angular development with a custom dark purple visual identity.
 
 ## Theme
 
