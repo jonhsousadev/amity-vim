@@ -14,6 +14,16 @@ function M.load()
   require("amethyst-pulse.groups.lsp").setup(c, hl)
   require("amethyst-pulse.groups.plugins").setup(c, hl)
 
+  -- Desabilitar semantic tokens do LSP (evita sobrescrever treesitter)
+  vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(args)
+      local client = vim.lsp.get_client_by_id(args.data.client_id)
+      if client then
+        client.server_capabilities.semanticTokensProvider = nil
+      end
+    end,
+  })
+
   -- Links de compatibilidade
   vim.cmd("highlight! link @markup.heading.1.markdown markdownH1")
   vim.cmd("highlight! link @markup.heading.2.markdown markdownH2")

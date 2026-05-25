@@ -18,7 +18,7 @@ function M.setup(c, hl)
   hl("@lsp.type.macro",          { fg = c.purple })
   hl("@lsp.type.builtinType",    { fg = c.cyan, bold = true })
   hl("@lsp.mod.deprecated",      { strikethrough = true })
-  hl("@lsp.mod.readonly",        { fg = c.purple, bold = true })
+  hl("@lsp.mod.readonly",        { bold = true })
   hl("@lsp.mod.defaultLibrary",  { fg = c.cyan, italic = true })
   hl("@lsp.mod.async",           { fg = c.purple, italic = true })
 
