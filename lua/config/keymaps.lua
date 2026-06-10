@@ -1,6 +1,26 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+
+-- Override lazygit to use the real terminal application
+vim.keymap.set("n", "<leader>gg", function()
+  local Terminal = require("snacks.terminal")
+  Terminal.open({ "lazygit" }, {
+    cwd = vim.fn.getcwd(),
+    esc_esc = false,
+    ctrl_hjkl = false,
+  })
+end, { desc = "Lazygit (Root Dir)" })
+
+vim.keymap.set("n", "<leader>gG", function()
+  local Terminal = require("snacks.terminal")
+  Terminal.open({ "lazygit" }, {
+    cwd = vim.fn.expand("%:p:h"),
+    esc_esc = false,
+    ctrl_hjkl = false,
+  })
+end, { desc = "Lazygit (Current Dir)" })
+
 -- Atalho para sair do Diffview ou do modo diff nativo
 vim.keymap.set("n", "<leader>gq", function()
   if vim.wo.diff then

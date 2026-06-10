@@ -1,5 +1,5 @@
 -- Git: gitsigns com blame virtual text ativo por defeito
--- lazygit já está integrado no core via Snacks (<leader>gg)
+-- lazygit configurado via Snacks (<leader>gg)
 return {
   {
     "lewis6991/gitsigns.nvim",
@@ -12,6 +12,18 @@ return {
         delay = 500,           -- ms após parar de escrever
       },
       current_line_blame_formatter = " <author>, <author_time:%d/%m/%Y> · <summary>",
+    },
+  },
+  
+  -- Configure Snacks to use real lazygit
+  {
+    "folke/snacks.nvim",
+    opts = {
+      lazygit = {
+        enabled = true,
+        -- Use the actual lazygit terminal application
+        configure = true,
+      },
     },
   },
 }
