@@ -14,8 +14,7 @@
     "lazyvim.plugins.extras.lang.tailwind",
     "lazyvim.plugins.extras.lang.typescript",
     "lazyvim.plugins.extras.lang.typescript.vtsls",
-    "lazyvim.plugins.extras.test.core",
-    "lazyvim.plugins.extras.util.gitui"
+    "lazyvim.plugins.extras.test.core"
   ],
   "install_version": 8,
   "news": {
@@ -23,3 +22,4 @@
   },
   "version": 8
 }
+
